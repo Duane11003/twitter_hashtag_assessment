@@ -12,6 +12,26 @@ const Twit = require("twit");
 
 const T = new Twit(config);
 
+// search tweets route
+
+app.post("/search", function (req, res) {
+  T.get("search/tweets", { q: `%23${req.body}`, count: 1 }, function (
+    err,
+    data,
+    response
+  ) {
+    console.log(req.body, 'is the req.body')
+    res.send(data)
+  });
+  // res.send("info from twitter");
+});
+
+
+
+
+
+
+
 app.listen(3000, function () {
   console.log("listening on 3000");
 });
