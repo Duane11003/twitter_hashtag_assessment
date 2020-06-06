@@ -15,13 +15,14 @@ const T = new Twit(config);
 // search tweets route
 
 app.post("/search", function (req, res) {
+  console.log(req.body, 'is the req.body')
   T.get("search/tweets", { q: `%23${req.body}`, count: 1 }, function (
     err,
     data,
     response
   ) {
-    console.log(req.body, 'is the req.body')
-    res.send(data)
+    
+    res.send(data.statuses)
   });
   // res.send("info from twitter");
 });
