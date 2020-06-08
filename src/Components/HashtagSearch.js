@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Results from "../Components/Results";
+import Button from '../Styles/Button'
 
 function HashtagSearch() {
   const [input, setInput] = useState("");
@@ -42,13 +43,20 @@ function HashtagSearch() {
     console.log(tweets)
   };
 
-  if (error) return <p>Error fetching tweets</p>;
+  if (error) {
+    return (
+      <div>
+        <p>Error fetching tweets</p>
+        <Button onClick={reset}>Reset</Button>
+      </div>
+    )
+  }
   if (loading) return <p>Loading...</p>;
   if (inputError) {
     return (
       <div>
         <p>Input can't be blank</p>
-        <button onClick={reset}>Go Back</button>
+        <Button onClick={reset}>Go Back</Button>
       </div>
     );
   }
@@ -61,7 +69,7 @@ function HashtagSearch() {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       ></input>
-      <button onClick={handleClick}>Click</button>
+      <Button onClick={handleClick}>Click</Button>
       <Results tweets={tweets} />
     </div>
   );
