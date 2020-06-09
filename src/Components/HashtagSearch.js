@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Results from "../Components/Results";
-import Button from '../Styles/Button'
+import Button from "../Styles/Button";
+import Input from "../Styles/Input";
+import SingleTweet from '../Components/SingleTweet'
 
 function HashtagSearch() {
   const [input, setInput] = useState("");
@@ -10,6 +12,7 @@ function HashtagSearch() {
   const [inputError, setInputError] = useState(false);
 
   const reset = () => setInputError(false);
+  const errorReset = () => setError(false);
 
   const handleClick = () => {
     if (!input) {
@@ -40,16 +43,16 @@ function HashtagSearch() {
         setLoading(false);
       });
     setInput("");
-    console.log(tweets)
+    console.log(tweets);
   };
 
   if (error) {
     return (
       <div>
         <p>Error fetching tweets</p>
-        <Button onClick={reset}>Reset</Button>
+        <Button onClick={errorReset}>Reset</Button>
       </div>
-    )
+    );
   }
   if (loading) return <p>Loading...</p>;
   if (inputError) {
@@ -61,16 +64,19 @@ function HashtagSearch() {
     );
   }
 
+  console.log(tweets)
+
   return (
     <div>
-      <input
+      <Input
         type="text"
-        placeholder="#"
+        placeholder="Search by hashtag"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-      ></input>
+      ></Input>
       <Button onClick={handleClick}>Click</Button>
-      <Results tweets={tweets} />
+      <SingleTweet tweets={tweets} />
+
     </div>
   );
 }

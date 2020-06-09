@@ -5,4 +5,36 @@
 .rootContainer {
   display: grid;
   justify-content: center;
+  margin-top: 6em;
+  max-width: 100em;
+}
+
+input::placeholder {
+  color: lightgrey;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+li {
+  min-width: 20em;
+  max-width: 30em;
+  margin: 0 2em 2em 2em;
+  border: 1px solid palevioletred;
+}
+
+.tweet-container {
+  max-width: 377px;
+  margin: 50px 0 0 0;
+  padding-left: 1em;
+  padding-right: 1em;
+  border: solid 1px palevioletred;
+}
+
+.profile-banner {
+  object-fit: cover;
 }

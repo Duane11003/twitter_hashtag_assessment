@@ -1,4 +1,5 @@
 import React from "react";
+import Div from "../Styles/Div";
 
 function Results({ tweets }) {
   const mappedTweets = tweets.map(({ id, user, text }) => {
@@ -11,9 +12,9 @@ function Results({ tweets }) {
     );
   });
   return (
-    <div>
+    <Div>
       <ul>{mappedTweets}</ul>
-    </div>
+    </Div>
   );
 }
 
