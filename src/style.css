@@ -30,11 +30,30 @@ li {
 .tweet-container {
   max-width: 377px;
   margin: 50px 0 0 0;
-  padding-left: 1em;
-  padding-right: 1em;
+  /* padding-left: 1em;
+  padding-right: 1em; */
   border: solid 1px palevioletred;
+}
+
+.tweet-text-container {
+  margin: 0 1em 1em 1em;
+}
+
+.profile-image-container {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+}
+
+.profile-image {
+  border-radius: 15px;
+  margin: 1em 0 1em 0;
+  border: 3px solid palevioletred;
 }
 
 .profile-banner {
   object-fit: cover;
+  max-width: 100%;
+  min-width: 100%;
+  display: block;
 }

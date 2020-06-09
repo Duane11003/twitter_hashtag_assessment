@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Results from "../Components/Results";
+import React, { useState } from "react";
 import Button from "../Styles/Button";
 import Input from "../Styles/Input";
 import SingleTweet from '../Components/SingleTweet'
